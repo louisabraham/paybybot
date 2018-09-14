@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name='paybybot',
-    version='0.0.0',
+    version='0.0.2',
     author='Louis Abraham',
     license='MIT',
     author_email='louis.abraham@yahoo.fr',
@@ -18,6 +18,7 @@ setup(
     long_description=read('README.rst'),
     url='https://github.com/louisabraham/paybybot',
     packages=['paybybot'],
+    install_requires=['selenium', 'dateparser'],
     python_requires='>=3.5',
     entry_points={'console_scripts': ['paybybot = paybybot:main']},
     classifiers=[
