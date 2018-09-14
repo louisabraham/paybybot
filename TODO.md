@@ -1,2 +1,3 @@
   - add a proper configuration file:
       - minimal timedelta to trigger an email
+      - webdriver selection
