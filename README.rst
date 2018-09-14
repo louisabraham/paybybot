@@ -4,8 +4,8 @@ paybybot
 Simple bot that sends you an email when you didn’t pay your parking on
 https://www.paybyphone.fr/
 
-Installation on a Raspberry PI
-------------------------------
+Installation on a Raspberry PI (about 30 minutes)
+-------------------------------------------------
 
 Install Chromium
 ~~~~~~~~~~~~~~~~
@@ -38,14 +38,13 @@ Install Chromedriver
 
    ::
 
-      sudo gdebi chromium-chromedriver\*.deb
+      sudo gdebi chromium-chromedriver*.deb
 
 5. Put chromedriver in your path
 
    ::
 
-      sudo mv /usr/lib/chromium-browser/chromedriver
-      /usr/bin/chromedriver
+      sudo mv /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
 
 Sources:
 

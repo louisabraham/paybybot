@@ -3,7 +3,7 @@
 Simple bot that sends you an email when you didn’t pay your parking on
 https://www.paybyphone.fr/
 
-## Installation on a Raspberry PI
+## Installation on a Raspberry PI (about 30 minutes)
 
 ### Install Chromium
 
@@ -27,16 +27,16 @@ Firefox doesn’t support headless mode on Debian yet.
 
 4.  Install chromedriver
     
-        sudo gdebi chromium-chromedriver\*.deb
+        sudo gdebi chromium-chromedriver*.deb
 
-5.  Put chromedriver in your path
+5.  Put chromedriver in your
+        path
     
-        sudo mv /usr/lib/chromium-browser/chromedriver
-        /usr/bin/chromedriver
+        sudo mv /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
 
 Sources:
 
-  - https://www.reddit.com/r/selenium/comments/7341wt/success\_how\_to\_run\_selenium\_chrome\_webdriver\_on/
+  - <https://www.reddit.com/r/selenium/comments/7341wt/success_how_to_run_selenium_chrome_webdriver_on/>
   - https://superuser.com/a/196867/541587
 
 ### Install pip
