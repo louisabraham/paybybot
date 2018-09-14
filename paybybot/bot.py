@@ -82,6 +82,8 @@ class Bot():
             try:
                 gdpr.click()
             except (ElementClickInterceptedException, WebDriverException):
+                # ElementClickInterceptedException for Firefox
+                # WebDriverException for Chromium
                 sleep(1)
             else:
                 break
