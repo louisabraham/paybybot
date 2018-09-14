@@ -24,20 +24,28 @@ Install Chromedriver
 
 2. Use this link in
 
-   wget
-   http://launchpadlibrarian.net/361669488/chromium-chromedriver_65.0.3325.181-0ubuntu0.14.04.1_armhf.deb
+   ::
+
+      wget http://launchpadlibrarian.net/361669488/chromium-chromedriver_65.0.3325.181-0ubuntu0.14.04.1_armhf.deb
 
 3. Install gdebi
 
-   sudo apt-get install gdebi
+   ::
+
+      sudo apt-get install gdebi
 
 4. Install chromedriver
 
-   sudo gdebi chromium-chromedriver*.deb
+   ::
+
+      sudo gdebi chromium-chromedriver\*.deb
 
 5. Put chromedriver in your path
 
-   sudo mv /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
+   ::
+
+      sudo mv /usr/lib/chromium-browser/chromedriver
+      /usr/bin/chromedriver
 
 Sources:
 

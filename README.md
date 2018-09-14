@@ -16,23 +16,23 @@ Firefox doesn’t support headless mode on Debian yet.
 1.  Go to the page of the latest *armhf* build on
     https://launchpad.net/ubuntu/trusty/+package/chromium-chromedriver
 
-2.  Use this link in
+2.  Use this link
+        in
     
-    wget
-    http://launchpadlibrarian.net/361669488/chromium-chromedriver\_65.0.3325.181-0ubuntu0.14.04.1\_armhf.deb
+        wget http://launchpadlibrarian.net/361669488/chromium-chromedriver_65.0.3325.181-0ubuntu0.14.04.1_armhf.deb
 
 3.  Install gdebi
     
-    sudo apt-get install gdebi
+        sudo apt-get install gdebi
 
 4.  Install chromedriver
     
-    sudo gdebi chromium-chromedriver\*.deb
+        sudo gdebi chromium-chromedriver\*.deb
 
 5.  Put chromedriver in your path
     
-    sudo mv /usr/lib/chromium-browser/chromedriver
-    /usr/bin/chromedriver
+        sudo mv /usr/lib/chromium-browser/chromedriver
+        /usr/bin/chromedriver
 
 Sources:
 
