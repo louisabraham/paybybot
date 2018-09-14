@@ -20,7 +20,7 @@ REMINDER_TEMPLATE = (
 
 def main():
     try:
-        bot = Bot()
+        bot = Bot('chromium-headless')
         bot.connect()
         sessions = bot.get_parking_sessions()
         logging.info('retrieved sessions: %s' % sessions)

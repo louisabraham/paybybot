@@ -4,9 +4,10 @@ from collections import namedtuple
 import sys
 
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException, WebDriverException
 
 from dateparser import parse as parse_date
 
@@ -28,11 +29,30 @@ ParkingSession = namedtuple('ParkingSession',
 
 class Bot():
 
-    def __init__(self, headless=False):
-        options = Options()
-        if headless:
-            options.add_argument('-headless')
-        self.driver = webdriver.Firefox(firefox_options=options)
+    def __init__(self, driver):
+
+        driver = driver.casefold()
+
+        if driver == 'phantomjs':
+            # --disk-cache=true allows to keep a cache
+            self.driver = webdriver.PhantomJS(
+                service_args=['--disk-cache=true'])
+
+        elif driver in ['chrome', 'chrome-headless', 'chromium', 'chromium-headless']:
+            # TODO: find option to use custom profile with cache
+            chrome_options = ChromeOptions()
+            chrome_options.add_argument("--disable-gpu")  # most important line
+            chrome_options.add_argument("--disable-extensions")
+            if len(driver.split('-')) == 2:
+                chrome_options.add_argument("--headless")
+            self.driver = webdriver.Chrome(chrome_options=chrome_options)
+
+        elif driver in ['firefox', 'firefox-headless']:
+            # not working, disable gpu?
+            options = FirefoxOptions()
+            if len(driver.split('-')) == 2:
+                options.add_argument('-headless')
+            self.driver = webdriver.Firefox(firefox_options=options)
 
     def send_keys(self, *args):
         self.driver.switch_to_active_element().send_keys(*args)
@@ -61,7 +81,7 @@ class Bot():
         while True:
             try:
                 gdpr.click()
-            except ElementClickInterceptedException:
+            except (ElementClickInterceptedException, WebDriverException):
                 sleep(1)
             else:
                 break
