@@ -31,7 +31,7 @@ def main():
         else:
             s = sessions[0]
             delta = s.ExpiryDate - datetime.now()
-            if delta.days < 2:
+            if delta.days < 1:
                 hours, minutes = divmod(int(delta.total_seconds()) // 60, 60)
                 notify('RAPPEL STATIONNEMENT',
                        REMINDER_TEMPLATE.format(
