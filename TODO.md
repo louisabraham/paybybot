@@ -1,3 +1,5 @@
   - add a proper configuration file:
       - minimal timedelta to trigger an email
       - webdriver selection
+  - handle automatic renewal
+  - web interface
