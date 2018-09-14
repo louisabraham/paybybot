@@ -13,7 +13,7 @@ Firefox doesn’t support headless mode on Debian yet.
 
 ### Install Chromedriver
 
-1.  Go to the page of the latest *armhf* build on
+1.  Go to the page of the latest **armhf** build on
     https://launchpad.net/ubuntu/trusty/+package/chromium-chromedriver
 
 2.  Use this link
@@ -51,15 +51,17 @@ Sources:
 
 ### Configure your credentials
 
-    # ~/.paybybot
+In ~/.paybybot:
+
     {Your phone number}:{PayByPhone password}
-    
-    # ~/.email-creds
+
+In ~/.email-creds:
+
     {Your email address}:{Email password}
 
 For your email account, I advise you to use an app password. See
-[here](https://support.google.com/accounts/answer/185833?hl=en) for
-Gmail.
+[here](https://support.google.com/accounts/answer/185833?hl=en) to
+configure one in Gmail.
 
 ### Add a cron task
 
