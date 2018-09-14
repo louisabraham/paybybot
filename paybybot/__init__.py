@@ -26,7 +26,8 @@ def main():
         logging.info('retrieved sessions: %s' % sessions)
         if not sessions:
             notify('ALERTE STATIONNEMENT',
-                   'Aucun stationnement en cours !!!')
+                   'Aucun stationnement en cours !!!\n'
+                   'Pour le renouveller : https://m2.paybyphone.fr/parking')
         else:
             s = sessions[0]
             delta = s.ExpiryDate - datetime.now()
