@@ -97,6 +97,17 @@ and write
 
 ::
 
-   50 8 * * * paybybot
+   50 8 * * * ~/.local/bin/paybybot
 
 to run paybybot everyday at 8:50
+
+Configure your timezone correctly
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For both ``crontab`` and the logs.
+
+::
+
+   sudo raspi-config
+
+then *Localisation Options > Change Timezone*
