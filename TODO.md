@@ -2,4 +2,4 @@
       - minimal timedelta to trigger an email
       - webdriver selection
   - handle automatic renewal
-  - web interface
+  - interface with <https://github.com/dddomodossola/remi>
