@@ -6,3 +6,4 @@ dist/
 *.egg-info/
 
 **/geckodriver.log
+.vscode/

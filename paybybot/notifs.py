@@ -3,12 +3,6 @@ from pathlib import Path
 from smtplib import SMTP_SSL
 import logging
 
-try:
-    with Path("~/.email_creds").expanduser().open() as f:
-        email, pwd = f.readline().split(":", 1)
-except FileNotFoundError:
-    print("Error: ~/.email_creds is not there", file=sys.stderr)
-
 
 EMAIL_TEMPLATE = """\
 From: {email}
@@ -19,7 +13,7 @@ Subject: {subject}
 """
 
 
-def notify(subject, message):
+def notify(email, pwd, subject, message):
     with SMTP_SSL("smtp.gmail.com", 465) as server:
         server.ehlo()
         server.login(email, pwd)
