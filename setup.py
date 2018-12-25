@@ -9,19 +9,17 @@ def read(fname):
 
 
 setup(
-    name='paybybot',
-    version='0.0.3',
-    author='Louis Abraham',
-    license='MIT',
-    author_email='louis.abraham@yahoo.fr',
-    description='Notifications for https://www.paybyphone.fr/',
-    long_description=read('README.rst'),
-    url='https://github.com/louisabraham/paybybot',
-    packages=['paybybot'],
-    install_requires=['selenium', 'dateparser'],
-    python_requires='>=3.5',
-    entry_points={'console_scripts': ['paybybot = paybybot:main']},
-    classifiers=[
-        'Topic :: Utilities',
-    ],
+    name="paybybot",
+    version="0.0.3",
+    author="Louis Abraham",
+    license="MIT",
+    author_email="louis.abraham@yahoo.fr",
+    description="Notifications for https://www.paybyphone.fr/",
+    long_description=read("README.rst"),
+    url="https://github.com/louisabraham/paybybot",
+    packages=["paybybot"],
+    install_requires=["selenium", "dateparser"],
+    python_requires=">=3.5",
+    entry_points={"console_scripts": ["paybybot = paybybot:main"]},
+    classifiers=["Topic :: Utilities"],
 )
