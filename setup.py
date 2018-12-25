@@ -18,7 +18,7 @@ setup(
     long_description=read("README.rst"),
     url="https://github.com/louisabraham/paybybot",
     packages=["paybybot"],
-    install_requires=["selenium", "dateparser"],
+    install_requires=["selenium", "dateparser", "pyyaml"],
     python_requires=">=3.5",
     entry_points={"console_scripts": ["paybybot = paybybot:main"]},
     classifiers=["Topic :: Utilities"],

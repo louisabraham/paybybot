@@ -6,6 +6,7 @@ import sys
 
 from .bot import Bot
 from .notifs import notify
+from .config import CONFIG
 
 logging.basicConfig(
     format="%(asctime)s %(message)s",
@@ -23,18 +24,14 @@ REMINDER_TEMPLATE = (
 
 
 def main():
-    try:
-        with Path("~/.paybybot").expanduser().open() as f:
-            pbp_login, pbp_pwd = f.readline().split(":", 1)
-    except FileNotFoundError:
-        logging.error("~/.paybybot is not there")
-        return
 
     try:
-        with Path("~/.email_creds").expanduser().open() as f:
-            email, email_pwd = f.readline().split(":", 1)
-    except FileNotFoundError:
-        logging.error("Error: ~/.email_creds is not there")
+        pbp_login = CONFIG["paybyphone"]["login"]
+        pbp_pwd = CONFIG["paybyphone"]["password"]
+        email = CONFIG["email"]["login"]
+        email_pwd = CONFIG["email"]["password"]
+    except KeyError as e:
+        logging.error("Fatal exception while reading credentials: %s", e)
         return
 
     try:
