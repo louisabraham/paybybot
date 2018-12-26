@@ -12,5 +12,3 @@ def get_config():
         logging.warning("~/.paybybot.yml doesn't exist")
         return {}
 
-
-CONFIG = get_config()
