@@ -1,5 +1,5 @@
-  - add a proper configuration file:
-      - minimal timedelta to trigger an email
-      - webdriver selection
-  - handle automatic renewal
-  - interface with <https://github.com/dddomodossola/remi>
+  - add logging (for debug)
+  - augment logging level for info
+  - test on raspi
+  - update instructions
+  - option for webdriver selection
