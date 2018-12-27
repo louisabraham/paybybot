@@ -1,3 +1,4 @@
+  - catch and log all exceptions
   - add logging (for debug)
   - augment logging level for info
   - test on raspi
