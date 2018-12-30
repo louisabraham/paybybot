@@ -12,3 +12,8 @@ def get_config():
         logging.warning("~/.paybybot.yml doesn't exist")
         return {}
 
+
+def validate_config(config):
+    for task in config:
+        if "at" in task["check"] and not isinstance(task["check"]["at"], str):
+            return "'at' must be string"

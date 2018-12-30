@@ -145,6 +145,9 @@ class Bot:
             "RES", "VIS", "PRO-SAD" or other
         duration : int or str
             minutes if VIS, else days
+        check_cost : None or str
+            if string, will check that the cost is correct
+        
         Returns
         -------
         success : bool
