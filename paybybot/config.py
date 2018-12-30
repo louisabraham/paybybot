@@ -4,7 +4,7 @@ import yaml
 
 
 def get_config():
-    yml_path: Path = Path("~/.paybybot.yml").expanduser()
+    yml_path = Path("~/.paybybot.yml").expanduser()
     if yml_path.exists():
         with yml_path.open() as ymlfile:
             return yaml.load(ymlfile)
