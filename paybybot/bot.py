@@ -117,6 +117,16 @@ class Bot:
             else:
                 break
 
+        # dimiss cookies banner that causes problems
+        # for payment
+
+        button = next(
+            b
+            for b in self.driver.find_elements_by_tag_name("button")
+            if b.text == "DISMISS"
+        )
+        button.click()
+
         return True
 
     def get_parking_sessions(self):
