@@ -111,10 +111,12 @@ def check(task):
         logging.info("retrieved sessions: %s", sessions)
 
         if "pay" in task:
-            location = task["pay"]["location"]
             pay_now = True
             for session in sessions:
-                if session.LocationNumber == location:
+                if (
+                    session.LicensePlate == task["pay"]["plate"]
+                    and session.LocationNumber == task["pay"]["location"]
+                ):
                     pay_now = False
                     delta = session.ExpiryDate - datetime.now()
                     if delta.days < 1:
