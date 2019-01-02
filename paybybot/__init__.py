@@ -114,7 +114,7 @@ def check(task):
             pay_now = True
             for session in sessions:
                 if (
-                    session.LicensePlate == task["pay"]["plate"]
+                    session.LicensePlate == task["plate"]
                     and session.LocationNumber == task["pay"]["location"]
                 ):
                     pay_now = False
