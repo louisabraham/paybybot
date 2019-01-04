@@ -1,4 +1,5 @@
   - test on raspi
   - add timeouts
+  - add alerts on fail
   - update instructions
   - option for webdriver selection
