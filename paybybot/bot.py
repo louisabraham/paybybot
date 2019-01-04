@@ -232,11 +232,10 @@ class Bot:
                     self.send_keys(Keys.DOWN)
                 sleep(0.5)
                 self.send_keys(Keys.SPACE)
-            self.send_keys(Keys.TAB)
-            sleep(0.5)
-            self.send_keys(Keys.TAB)
-            sleep(0.5)
-            self.send_keys(Keys.ENTER)
+
+            self.driver.find_element_by_xpath(
+                "/html/body/div/section/md-content/form/button"
+            ).click()
 
         while not self.driver.current_url == self.DURATION_URL:
             sleep(1)
@@ -286,6 +285,12 @@ class Bot:
         logging.info("confimed purchase for %s", cost)
         button = self.driver.find_element_by_xpath(self.CONFIRM_BUTTON_XPATH)
         button.click()
+
+        while (
+            not self.driver.find_element_by_class_name("content-title").text
+            == "You've paid!"
+        ):
+            sleep(0.5)
 
         return cost
 
