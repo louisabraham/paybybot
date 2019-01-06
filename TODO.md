@@ -1,4 +1,5 @@
   - test on raspi
+  - validate number strings in yaml
   - add timeouts
   - add alerts on fail
   - update instructions
