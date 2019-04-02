@@ -4,6 +4,7 @@ from os.path import expanduser
 from pathlib import Path
 import sys
 import time
+import traceback
 
 import schedule
 
@@ -173,6 +174,17 @@ def check(task):
                 )
     except:
         logging.exception("Exception in check")
+        if task["notify-on-error"]:
+            exc_type, exc_value, exc_traceback = sys.exc_info()
+            exc_string = "".join(
+                traceback.format_exception(exc_type, exc_value, exc_traceback)
+            )
+            notify(
+                email=task["email"]["login"],
+                pwd=task["email"]["password"],
+                subject="ERREUR STATIONNEMENT",
+                message=exc_string,
+            )
     finally:
         bot.quit()
 
