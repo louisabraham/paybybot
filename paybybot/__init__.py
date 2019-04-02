@@ -29,9 +29,16 @@ REMINDER_TEMPLATE = (
 def connect(task):
     pbp_login = task["paybyphone"]["login"]
     pbp_pwd = task["paybyphone"]["password"]
-
-    bot = Bot("chromium-headless")
-    connected = bot.connect(pbp_login, pbp_pwd)
+    for i in range(10):
+        try:
+            bot = Bot("chromium-headless")
+            connected = bot.connect(pbp_login, pbp_pwd)
+        except TimeoutError:
+            logging.exception("Connection failed %i times" % (i + 1))
+            if i == 9:
+                raise
+        else:
+            break
     if not connected:
         logging.error("Authentification with login '%s' failed", pbp_login)
         assert False
